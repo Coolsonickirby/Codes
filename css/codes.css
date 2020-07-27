@@ -1,0 +1,93 @@
+body {
+    background-color: #EEE2DC;
+}
+
+input[type=text] {
+    background-color: #123C69;
+    color: #bcc4bf;
+}
+
+input[type=text]::placeholder {
+    color: #bcc4bf;
+}
+
+input[type=text]:focus {
+    -webkit-animation: inputColor 1s;
+    -moz-animation: inputColor 1s;
+    -ms-animation: inputColor 1s;
+    -o-animation: inputColor 1s;
+    animation: inputColor 1s;
+    background-color: #AC3B61;
+    color: #bcc4bf !important;
+}
+
+.hr-line {
+    border: 1px solid black;
+}
+
+.id-text {
+    color: red;
+}
+
+.phone-nice {
+    margin-bottom: 25px;
+}
+
+.nice-buttons {
+    margin-right: 5px !important;
+}
+
+.phone:last-child {
+    margin-bottom: 0px;
+}
+
+.card-body {
+    background-color: #EDC7B7;
+}
+
+.card-footer {
+    background-color: #d1b1a3;
+}
+
+.load {
+    -webkit-animation: loadingAnimation 1s infinite;
+    -moz-animation: loadingAnimation 1s infinite;
+    -o-animation: loadingAnimation 1s infinite;
+    animation: loadingAnimation 1s infinite;
+}
+
+.store-name {
+    text-align: center;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    -webkit-text-stroke: 1px black;
+    text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.store-background {
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: #BAB2B5;
+}
+
+@keyframes inputColor {
+    from {
+        background-color: #123C69;
+    }
+    to {
+        background-color: #AC3B61;
+    }
+}
+
+@keyframes loadingAnimation {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

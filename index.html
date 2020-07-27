@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Codes</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/codes.css">
+</head>
+
+<body>
+
+
+    <!-- TODO:
+        Add a Quiz Mode (Not Important)
+     -->
+
+    <div class="container" id="loading">
+        <br>
+        <h3 class="load">Loading...</h3>
+    </div>
+
+    <div class="container" id="failsafe" style="display:none;">
+        <br>
+        <br>
+        <h1 style="text-align: center;">Setup</h1>
+        <div id="settings">
+            <div class="alert alert-success" id="success" style="display:none;">
+                <h4 id="msg"><strong>Settings saved successfully!</strong></h4>
+            </div>
+            <div style="display: flex;">
+                <div class="form-group" style="display:block; margin-right: 10px; width: 100%;">
+                    <label for="name">Main URL:</label>
+                    <input type="text" class="form-control" placeholder="Enter Main URL API" id="mainURLFailSafe">
+                </div>
+
+                <div class="form-group" style="display:block; margin-right: 10px; width: 100%;">
+                    <label for="id">Store Name:</label>
+                    <input type="text" class="form-control" placeholder="Enter Store Name" id="storeNameFailSafe" value="My Custom Store">
+                </div>
+            </div>
+
+            <button class="btn btn-success" onclick="saveSettings(document.getElementById('mainURLFailSafe').value,document.getElementById('storeNameFailSafe').value)" style="display:block; margin-right: 10px; width: 100%;">Submit</button>
+            <br>
+            <button class="btn btn-warning" onclick="location.reload(true)" style="display:block; margin-right: 10px; width: 100%;">Refresh App</button>
+        </div>
+
+    </div>
+
+    <div class="container" style="display:none;" id="main">
+        <br>
+
+        <div class="store-background">
+            <h3 id="store" class="store-name"></h3>
+        </div>
+        <br>
+
+        <div id="buttons" class="btn-toolbar">
+            <button onclick="getCodes('custom', 'ture', 'allow')" type="button" class="btn btn-info phone-nice nice-buttons">Custom</button>
+
+            <button onclick="openSettings()" type="button" class="btn btn-danger phone-nice nice-buttons">Settings</button>
+        </div>
+        <br class="br-tag">
+
+        <input type="text" class="form-control" id="search" placeholder="Serach Box (Enter ID or Product Name)">
+
+        <br class="br-tag">
+
+        <div style="display:none;" id="customInputState">
+            <div style="display: flex;">
+                <div class="form-group" style="display:block; margin-right: 10px; width: 100%;">
+                    <label for="name">Product Name:</label>
+                    <input type="text" class="form-control" placeholder="Enter Custom Product Name" id="customName">
+                </div>
+
+                <div class="form-group" style="display:block; margin-right: 10px; width: 100%;">
+                    <label for="id">Product ID:</label>
+                    <input type="text" class="form-control" placeholder="Enter Custom Product ID" id="customId">
+                </div>
+            </div>
+            <button class="btn btn-success" onclick="submitItem(document.getElementById('customName').value,document.getElementById('customId').value,'custom', 'custom')" id="customButton" style="display:block; margin-right: 10px; width: 100%;">Submit</button>
+        </div>
+
+        <br>
+
+        <div id="appendTo">
+
+        </div>
+
+        <div id="settings_section" style="display:none;">
+            <div class="alert alert-success" id="success_setting" style="display:none;">
+                <h4 id="msg"><strong>Settings saved successfully!</strong></h4>
+            </div>
+            <div style="display: flex;">
+                <div class="form-group" style="display:block; margin-right: 10px; width: 100%;">
+                    <label for="name">Main URL:</label>
+                    <input type="text" class="form-control" placeholder="Enter Main URL API" id="mainURL">
+                </div>
+
+                <div class="form-group" style="display:block; margin-right: 10px; width: 100%;">
+                    <label for="id">Store Name:</label>
+                    <input type="text" class="form-control" placeholder="Enter Store Name" id="storeName">
+                </div>
+            </div>
+
+            <button class="btn btn-success" onclick="saveSettings(document.getElementById('mainURL').value,document.getElementById('storeName').value)" style="display:block; margin-right: 10px; width: 100%;">Submit</button>
+            <br>
+            <button class="btn btn-warning" onclick="location.reload(true)" style="display:block; margin-right: 10px; width: 100%;">Refresh App</button>
+            <br>
+            <button class="btn btn-danger" onclick="defaultSettings()" style="display:block; margin-right: 10px; width: 100%;">Restore Defaults</button>
+
+        </div>
+
+    </div>
+
+
+
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+
+    <script type="text/javascript" src="./js/codes.js"></script>
+
+</body>
+
+</html>
